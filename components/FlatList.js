@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-import { View, Text, FlatList, ActivityIndicator } from "react-native";
+import { View, Text, FlatList, ActivityIndicator, TouchableWithoutFeedback } from "react-native";
 import { List, ListItem, SearchBar } from "react-native-elements";
+import {createSwitchNavigator} from 'react-navigation';
+import SupportScreen from '../screens/SupportScreen';
 import _ from 'lodash';
 import { getUsers, contains } from './api/index';
-class FlatListItem extends Component {
+export class FlatListItem extends Component {
     constructor(props) {
       super(props);
   
@@ -59,7 +61,7 @@ class FlatListItem extends Component {
     };
   
     renderHeader = () => {
-      return <SearchBar placeholder="Type Here..." lightTheme round onChangeText={this.searchSkill}/>;
+      return <SearchBar placeholder="Search Skill Here..." lightTheme round onChangeText={this.searchSkill}/>;
     };
   
     renderFooter = () => {
@@ -84,6 +86,7 @@ class FlatListItem extends Component {
           <FlatList
             data={this.state.data}
             renderItem={({ item }) => (
+              <TouchableWithoutFeedback onPress={() => this.navigation.navigate('secondscreen')}>
               <ListItem
                 roundAvatar
                 title={`${item.name}`}
@@ -91,6 +94,7 @@ class FlatListItem extends Component {
                 //avatar={{ uri: item.picture.thumbnail }}
                 containerStyle={{ borderBottomWidth: 0 }}
               />
+              </TouchableWithoutFeedback>
             )}
             keyExtractor={item => item.contact}
             ItemSeparatorComponent={this.renderSeparator}
@@ -105,6 +109,9 @@ class FlatListItem extends Component {
       );
     }
   }
-  
-  export default FlatListItem;
+
+  export default createSwitchNavigator({
+    main: FlatListItem,
+    secondscreen: SupportScreen,
+  });
   

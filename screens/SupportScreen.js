@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
-export default class LinksScreen extends React.Component {
+export class SupportScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
@@ -9,7 +9,7 @@ export default class LinksScreen extends React.Component {
   render() {
     return (
       <ScrollView style={styles.container}>
-
+        <Text>Wew!</Text>
       </ScrollView>
     );
   }

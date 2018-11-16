@@ -22,7 +22,7 @@ export default class RequestScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <FlatListItem />
+        <FlatListItem/>
       </View>
     );
   }

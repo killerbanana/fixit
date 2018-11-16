@@ -2,7 +2,7 @@ import _ from 'lodash';
 import users from './users';
 
 export const contains = ({skill}, query) => {
-    if( skill.includes(query) || query === "mechanic"|| query === "electrician"|| query === "welder"){
+    if( skill.includes(query) || query == "mechanic" || query == "electrician" || query == "welder"){
         return true;
     }
     return false;

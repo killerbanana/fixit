@@ -20,6 +20,7 @@ const DEVICE_WIDTH = Dimensions.get('window').width;
 const DEVICE_HEIGHT = Dimensions.get('window').height;
 const MARGIN = 40;
 
+
 export class LoginForm extends Component {
   static navigationOptions = {
     header: null,

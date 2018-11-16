@@ -17,8 +17,6 @@ export class FlatListItem extends Component {
       };
     }
   
-    
-
     componentDidMount() {
       this.makeRemoteRequest();
     }

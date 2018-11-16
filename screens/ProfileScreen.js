@@ -4,14 +4,13 @@ import {
     View, 
     ScrollView,
     Text} from 'react-native';
+import {Icon} from 'native-base';
 
 export default class ProfileScreen extends React.Component{
     render(){
         return(
             <ScrollView style={styles.container}>
-                <View>
-                    <Text>PENGUIN</Text>
-                </View>
+                <Icon style={{height:30, width: 30, borderRadius: 5}} name='ios-person'/>
             </ScrollView>
         );
     }

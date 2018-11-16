@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { View, Text, FlatList, ActivityIndicator, TouchableWithoutFeedback } from "react-native";
 import { List, ListItem, SearchBar } from "react-native-elements";
-import {createSwitchNavigator} from 'react-navigation';
-import SupportScreen from '../screens/SupportScreen';
+//import {createSwitchNavigator} from 'react-navigation';
+//import stack from './stack';
 import _ from 'lodash';
 import { getUsers, contains } from './api/index';
+import SupportScreen from '../screens/SupportScreen'
 export class FlatListItem extends Component {
     constructor(props) {
       super(props);
@@ -18,6 +19,8 @@ export class FlatListItem extends Component {
       };
     }
   
+    
+
     componentDidMount() {
       this.makeRemoteRequest();
     }
@@ -60,13 +63,15 @@ export class FlatListItem extends Component {
       );
     };
   
+
     renderHeader = () => {
       return <SearchBar placeholder="Search Skill Here..." lightTheme round onChangeText={this.searchSkill}/>;
     };
   
     renderFooter = () => {
       if (!this.state.loading) return null;
-  
+
+
       return (
         <View
           style={{
@@ -79,14 +84,30 @@ export class FlatListItem extends Component {
         </View>
       );
     };
-  
+
+    
+    //gonext() {
+    //  this.props.navigation.navigate('SupportScreen');
+    //}
+
     render() {
+/*
+      const Flat = (props) => {
+        const { naivgate } = props.navigation;
+        goToNextScreen = () => {
+          return navigate('Supp');
+        }
+      }
+
+      
+*/
+      //const { navigate } = this.props.navigation;
       return (
         <List containerStyle={{ borderTopWidth: 0, borderBottomWidth: 0 }}>
           <FlatList
             data={this.state.data}
             renderItem={({ item }) => (
-              <TouchableWithoutFeedback onPress={() => this.navigation.navigate('secondscreen')}>
+              //<TouchableWithoutFeedback}>
               <ListItem
                 roundAvatar
                 title={`${item.name}`}
@@ -94,7 +115,7 @@ export class FlatListItem extends Component {
                 //avatar={{ uri: item.picture.thumbnail }}
                 containerStyle={{ borderBottomWidth: 0 }}
               />
-              </TouchableWithoutFeedback>
+              //</TouchableWithoutFeedback>
             )}
             keyExtractor={item => item.contact}
             ItemSeparatorComponent={this.renderSeparator}
@@ -109,9 +130,21 @@ export class FlatListItem extends Component {
       );
     }
   }
+/*
+const Detail = (props) =>{
+  const { navigate } = props.navigation;
+  return(
+    <View><Text>Detail Screen</Text></View>
+  );
+}*/
+/*
+const App = StackNavigator({
+  Flats: {screen: FlatList},
+  Supp: {screen: Support},
+})
 
   export default createSwitchNavigator({
     main: FlatListItem,
-    secondscreen: SupportScreen,
-  });
+    secondscreen: stack,
+  });*/
   

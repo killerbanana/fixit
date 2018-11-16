@@ -1,18 +1,10 @@
 import React, { Component } from "react";
 import { View, Text, FlatList, ActivityIndicator } from "react-native";
 import { List, ListItem, SearchBar } from "react-native-elements";
-<<<<<<< HEAD
-//import {createSwitchNavigator} from 'react-navigation';
-//import stack from './stack';
 import _ from 'lodash';
 import { getUsers, contains } from './api/index';
 import SupportScreen from '../screens/SupportScreen'
 export class FlatListItem extends Component {
-=======
-import _ from 'lodash';
-import { getUsers, contains } from './api/index';
-class FlatListItem extends Component {
->>>>>>> parent of 504c4eb... Revision 2 after unit breakdown
     constructor(props) {
       super(props);
   
@@ -71,7 +63,7 @@ class FlatListItem extends Component {
   
 
     renderHeader = () => {
-      return <SearchBar placeholder="Type Here..." lightTheme round onChangeText={this.searchSkill}/>;
+      return <SearchBar placeholder="Search Skill Here..." lightTheme round onChangeText={this.searchSkill}/>;
     };
   
     renderFooter = () => {
@@ -113,10 +105,6 @@ class FlatListItem extends Component {
           <FlatList
             data={this.state.data}
             renderItem={({ item }) => (
-<<<<<<< HEAD
-              //<TouchableWithoutFeedback}>
-=======
->>>>>>> parent of 504c4eb... Revision 2 after unit breakdown
               <ListItem
                 roundAvatar
                 title={`${item.name}`}
@@ -124,10 +112,6 @@ class FlatListItem extends Component {
                 //avatar={{ uri: item.picture.thumbnail }}
                 containerStyle={{ borderBottomWidth: 0 }}
               />
-<<<<<<< HEAD
-              //</TouchableWithoutFeedback>
-=======
->>>>>>> parent of 504c4eb... Revision 2 after unit breakdown
             )}
             keyExtractor={item => item.contact}
             ItemSeparatorComponent={this.renderSeparator}
@@ -142,7 +126,6 @@ class FlatListItem extends Component {
       );
     }
   }
-<<<<<<< HEAD
 /*
 const Detail = (props) =>{
   const { navigate } = props.navigation;
@@ -160,8 +143,6 @@ const App = StackNavigator({
     main: FlatListItem,
     secondscreen: stack,
   });*/
-=======
   
   export default FlatListItem;
->>>>>>> parent of 504c4eb... Revision 2 after unit breakdown
   

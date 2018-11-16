@@ -29,14 +29,19 @@ export class LoginForm extends Component {
       <Wallpaper>
         <Logo />
         <Form />
-      <View style={styles.container}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => this.props.navigation.navigate('Home')}
-            activeOpacity={1}>
-              <Text style={styles.text}>LOGIN</Text>
-          </TouchableOpacity>
-      </View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.props.navigation.navigate('Home')}
+          activeOpacity={1}>
+            <Text style={styles.text}>LOGIN</Text>
+        </TouchableOpacity>
+        <Text style={{top:-80, left: 20}}>----------------or----------------</Text>
+        <TouchableOpacity
+          style={styles.button1}
+          onPress={() => this.props.navigation.navigate('Home')}
+          activeOpacity={1}>
+            <Text style={styles.text1}>REGISTER</Text>
+        </TouchableOpacity>
       </Wallpaper>
     );
   }
@@ -47,20 +52,35 @@ export default createSwitchNavigator({
 });
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   button: {
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: '#e64a19',
-    height: MARGIN,
+    height: 40,
     borderRadius: 5,
     width:320,
+    top:-150,
+    left:20,
     zIndex: 100,
+  },
+  text: {
+    color: 'white',
+    backgroundColor: 'transparent',
+  },
+  button1: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#009688',
+    height: 40,
+    borderRadius: 5,
+    width:320,
+    top:-120,
+    left:20,
+    zIndex: 100,
+  },
+  text1: {
+    color: 'white',
+    backgroundColor: 'transparent',
   },
   circle: {
     height: MARGIN,
@@ -72,10 +92,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     zIndex: 99,
     backgroundColor: '#F035E0',
-  },
-  text: {
-    color: 'white',
-    backgroundColor: 'transparent',
   },
   image: {
     width: 24,

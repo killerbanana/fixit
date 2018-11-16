@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import {StyleSheet, View, Text, Image} from 'react-native';
 
-import logoImg from '../assets/images/logo1.png';
+import logoImg from '../assets/images/newLogo5.png';
 
 export default class Logo extends Component {
   render() {
@@ -17,12 +17,14 @@ export default class Logo extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 3,
+    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom:40,
   },
   image: {
-    width: 100,
-    height: 100,
+    top:50,
+    width: 250,
+    height: 150,
   },
 });
